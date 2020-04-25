@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		565E01AF245446F600147746 /* ImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 565E01AD245446F600147746 /* ImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		565E01B82454472900147746 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B52454472900147746 /* PageView.swift */; };
+		565E01B92454472900147746 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B62454472900147746 /* Animator.swift */; };
+		565E01BA2454472900147746 /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B72454472900147746 /* ImageViewerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		565E01AA245446F600147746 /* ImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E01AD245446F600147746 /* ImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewer.h; sourceTree = "<group>"; };
 		565E01AE245446F600147746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		565E01B52454472900147746 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		565E01B62454472900147746 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		565E01B72454472900147746 /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,9 @@
 		565E01AC245446F600147746 /* ImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				565E01B62454472900147746 /* Animator.swift */,
+				565E01B72454472900147746 /* ImageViewerController.swift */,
+				565E01B52454472900147746 /* PageView.swift */,
 				565E01AD245446F600147746 /* ImageViewer.h */,
 				565E01AE245446F600147746 /* Info.plist */,
 			);
@@ -95,6 +104,7 @@
 				TargetAttributes = {
 					565E01A9245446F600147746 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -131,6 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565E01B92454472900147746 /* Animator.swift in Sources */,
+				565E01B82454472900147746 /* PageView.swift in Sources */,
+				565E01BA2454472900147746 /* ImageViewerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +273,7 @@
 		565E01B3245446F600147746 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 56B66KRS9M;
@@ -268,6 +282,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ImageViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -276,6 +291,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.taimee.ImageViewer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +301,7 @@
 		565E01B4245446F600147746 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 56B66KRS9M;
@@ -292,6 +310,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ImageViewer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,6 +319,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.taimee.ImageViewer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
