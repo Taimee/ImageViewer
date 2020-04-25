@@ -8,8 +8,12 @@
 
 import UIKit
 
-public protocol ImageViewerControllerDelegate: AnyObject {
+public protocol ImageViewerControllerDelegate: ImageLoader {
     func dismiss(_ imageViewerController: ImageViewerController, lastPageIndex: Int)
+}
+
+public extension ImageViewerControllerDelegate {
+    func dismiss(_ imageViewerController: ImageViewerController, lastPageIndex: Int) {}
 }
 
 public final class ImageViewerController: UIViewController {
@@ -68,8 +72,11 @@ public final class ImageViewerController: UIViewController {
         super.viewDidLoad()
         view.addSubview(backgroundImageView)
         view.addSubview(scrollView)
+        guard let imageLoader = delegate else {
+            fatalError("must confirm ImageViewerControllerDelegate")
+        }
         imageURLs.forEach { [weak self] url in
-            let pageView = PageView.init(imageURL: url)
+            let pageView = PageView.init(imageURL: url, imageLoader: imageLoader)
             pageView.pageViewDelegate = self
             self?.scrollView.addSubview(pageView)
             self?.pageViews.append(pageView)

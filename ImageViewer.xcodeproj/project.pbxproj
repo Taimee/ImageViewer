@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5614442A24545FF000E9C33C /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565E01AA245446F600147746 /* ImageViewer.framework */; };
+		5614442B24545FF000E9C33C /* ImageViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 565E01AA245446F600147746 /* ImageViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		565E01AF245446F600147746 /* ImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 565E01AD245446F600147746 /* ImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		565E01B82454472900147746 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B52454472900147746 /* PageView.swift */; };
 		565E01B92454472900147746 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B62454472900147746 /* Animator.swift */; };
@@ -18,6 +20,30 @@
 		565E01CB24544C7D00147746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565E01CA24544C7D00147746 /* Assets.xcassets */; };
 		565E01CE24544C7D00147746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E01CC24544C7D00147746 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5614442C24545FF000E9C33C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 565E01A1245446F600147746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 565E01A9245446F600147746;
+			remoteInfo = ImageViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5614442E24545FF000E9C33C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5614442B24545FF000E9C33C /* ImageViewer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		565E01AA245446F600147746 /* ImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,18 +74,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5614442A24545FF000E9C33C /* ImageViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5614442924545FF000E9C33C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		565E01A0245446F600147746 = {
 			isa = PBXGroup;
 			children = (
 				565E01AC245446F600147746 /* ImageViewer */,
 				565E01C024544C7D00147746 /* Example */,
 				565E01AB245446F600147746 /* Products */,
+				5614442924545FF000E9C33C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,10 +172,12 @@
 				565E01BB24544C7D00147746 /* Sources */,
 				565E01BC24544C7D00147746 /* Frameworks */,
 				565E01BD24544C7D00147746 /* Resources */,
+				5614442E24545FF000E9C33C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5614442D24545FF000E9C33C /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -227,6 +264,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5614442D24545FF000E9C33C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 565E01A9245446F600147746 /* ImageViewer */;
+			targetProxy = 5614442C24545FF000E9C33C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		565E01C724544C7D00147746 /* Main.storyboard */ = {

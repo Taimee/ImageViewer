@@ -8,6 +8,14 @@
 
 import UIKit
 
+public protocol ImageLoader: AnyObject {
+    func load(_ imageURL: URL, into imageView: UIImageView, completion: () -> Void)
+}
+
+//let imagePipeline = ImagePipeline()
+//imagePipeline.shared.load(/* image URL */, into: /* image view */, transition: .fadeIn /* default is `.none`*/,
+//                          defaultImage: ..., failureImage: ...)
+
 protocol PageViewDelegate: AnyObject {
     func pageViewStatusDidChanged(_ status: PageView.Status)
     func pageViewDidLoadImage()
@@ -36,16 +44,16 @@ final class PageView: UIScrollView {
     
     weak var pageViewDelegate: PageViewDelegate?
     
-    init(imageURL: URL) {
+    init(imageURL: URL, imageLoader: ImageLoader?) {
         super.init(frame: .zero)
         addSubview(imageView)
         addSubview(loadingIndicator)
         
-//        imageView.setImage(with: imageURL) { [weak self] _ in
-//            self?.layoutImageViewIfNeeded()
-//            self?.loadingIndicator.removeFromSuperview()
-//            self?.pageViewDelegate?.pageViewDidLoadImage()
-//        }
+        imageLoader?.load(imageURL, into: imageView) { [weak self] in
+            self?.layoutImageViewIfNeeded()
+            self?.loadingIndicator.removeFromSuperview()
+            self?.pageViewDelegate?.pageViewDidLoadImage()
+        }
         
         // initialize scrollView
         self.delegate = self
