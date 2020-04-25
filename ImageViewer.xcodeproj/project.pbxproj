@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5614442A24545FF000E9C33C /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565E01AA245446F600147746 /* ImageViewer.framework */; };
 		5614442B24545FF000E9C33C /* ImageViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 565E01AA245446F600147746 /* ImageViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		561444302454636000E9C33C /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5614442F2454636000E9C33C /* Kingfisher.framework */; };
+		561444312454636000E9C33C /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5614442F2454636000E9C33C /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		565E01AF245446F600147746 /* ImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 565E01AD245446F600147746 /* ImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		565E01B82454472900147746 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B52454472900147746 /* PageView.swift */; };
 		565E01B92454472900147746 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B62454472900147746 /* Animator.swift */; };
@@ -38,6 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				561444312454636000E9C33C /* Kingfisher.framework in Embed Frameworks */,
 				5614442B24545FF000E9C33C /* ImageViewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -46,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5614442F2454636000E9C33C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		565E01AA245446F600147746 /* ImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E01AD245446F600147746 /* ImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewer.h; sourceTree = "<group>"; };
 		565E01AE245446F600147746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				561444302454636000E9C33C /* Kingfisher.framework in Frameworks */,
 				5614442A24545FF000E9C33C /* ImageViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +89,7 @@
 		5614442924545FF000E9C33C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5614442F2454636000E9C33C /* Kingfisher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -474,6 +480,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56B66KRS9M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -493,6 +503,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56B66KRS9M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

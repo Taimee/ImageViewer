@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol ImageLoader: AnyObject {
-    func load(_ imageURL: URL, into imageView: UIImageView, completion: () -> Void)
+    func load(_ imageURL: URL, into imageView: UIImageView, completion: (() -> Void)?)
 }
 
 //let imagePipeline = ImagePipeline()
