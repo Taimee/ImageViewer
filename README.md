@@ -6,9 +6,9 @@ Timee ImageViewer is a lightweight image viewer framework for iOS app.
 
 ## Demo
 
-|iOS 11.0+|
-|---|
-|<img src="https://raw.githubusercontent.com/Taimee/ImageViewer/master/images/demo.gif" width="375">|
+|Single Image|Multiple Images|
+|---|---|
+|<img src="https://raw.githubusercontent.com/Taimee/ImageViewer/master/images/demo02.gif" width="375">|<img src="https://raw.githubusercontent.com/Taimee/ImageViewer/master/images/demo.gif" width="375">|
 
 
 ## Usage
