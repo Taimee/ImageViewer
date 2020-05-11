@@ -46,7 +46,8 @@ public final class ImageViewerController: UIViewController {
     
     private lazy var dismissButton: UIButton = { [unowned self] in
         let button = UIButton()
-        button.setTitle("閉じる", for: .normal)
+        let image = UIImage.init(named: "icon_close", in: Bundle(for: ImageViewerController.self), compatibleWith: .none)
+        button.setImage(image, for: .normal)
         button.addTarget(self, action: #selector(dismissAction), for: .touchUpInside)
         return button
     }()

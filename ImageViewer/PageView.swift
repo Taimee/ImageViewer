@@ -12,10 +12,6 @@ public protocol ImageLoader: AnyObject {
     func load(_ imageURL: URL, into imageView: UIImageView, completion: (() -> Void)?)
 }
 
-//let imagePipeline = ImagePipeline()
-//imagePipeline.shared.load(/* image URL */, into: /* image view */, transition: .fadeIn /* default is `.none`*/,
-//                          defaultImage: ..., failureImage: ...)
-
 protocol PageViewDelegate: AnyObject {
     func pageViewStatusDidChanged(_ status: PageView.Status)
     func pageViewDidLoadImage()
