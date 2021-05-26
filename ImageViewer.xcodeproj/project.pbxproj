@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		56296ADE24546F4A003FAC37 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		5638E404265E4BCC00328030 /* ImageViewer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ImageViewer; path = Sources/ImageViewer; sourceTree = "<group>"; };
-		563ECFF8265E1653005C98FA /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		565E01AA245446F600147746 /* ImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -27,8 +25,6 @@
 		56296ADD24546F4A003FAC37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				563ECFF8265E1653005C98FA /* Kingfisher.xcframework */,
-				56296ADE24546F4A003FAC37 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
