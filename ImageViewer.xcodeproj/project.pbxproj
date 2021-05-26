@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5614442A24545FF000E9C33C /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565E01AA245446F600147746 /* ImageViewer.framework */; };
 		5614442B24545FF000E9C33C /* ImageViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 565E01AA245446F600147746 /* ImageViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		56296ADF24546F4A003FAC37 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56296ADE24546F4A003FAC37 /* Kingfisher.framework */; };
-		56296AE024546F4A003FAC37 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56296ADE24546F4A003FAC37 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		563ECFF9265E1653005C98FA /* Kingfisher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563ECFF8265E1653005C98FA /* Kingfisher.xcframework */; };
+		563ECFFA265E1653005C98FA /* Kingfisher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 563ECFF8265E1653005C98FA /* Kingfisher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		565E01AF245446F600147746 /* ImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 565E01AD245446F600147746 /* ImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		565E01B82454472900147746 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B52454472900147746 /* PageView.swift */; };
 		565E01B92454472900147746 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E01B62454472900147746 /* Animator.swift */; };
@@ -41,8 +41,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				56296AE024546F4A003FAC37 /* Kingfisher.framework in Embed Frameworks */,
 				5614442B24545FF000E9C33C /* ImageViewer.framework in Embed Frameworks */,
+				563ECFFA265E1653005C98FA /* Kingfisher.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		56296ADE24546F4A003FAC37 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		563ECFF8265E1653005C98FA /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		565E01AA245446F600147746 /* ImageViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E01AD245446F600147746 /* ImageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewer.h; sourceTree = "<group>"; };
 		565E01AE245446F600147746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,8 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56296ADF24546F4A003FAC37 /* Kingfisher.framework in Frameworks */,
 				5614442A24545FF000E9C33C /* ImageViewer.framework in Frameworks */,
+				563ECFF9265E1653005C98FA /* Kingfisher.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +92,7 @@
 		56296ADD24546F4A003FAC37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				563ECFF8265E1653005C98FA /* Kingfisher.xcframework */,
 				56296ADE24546F4A003FAC37 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
