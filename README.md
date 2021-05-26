@@ -14,7 +14,7 @@ This ImageViewer does NOT depend on other libraries, and you need to choose your
 
 |Zoom|Pagenation|
 |---|---|
-|<img src="https://raw.githubusercontent.com/Taimee/ImageViewer/master/images/demo02.gif" width="375">|<img src="https://raw.githubusercontent.com/Taimee/ImageViewer/master/images/demo01.gif" width="375">|
+|<img src="https://raw.githubusercontent.com/Taimee/ImageViewer/master/.github/images/demo02.gif" width="375">|<img src="https://raw.githubusercontent.com/Taimee/ImageViewer/master/.github/images/demo01.gif" width="375">|
 
 
 ## Usage
