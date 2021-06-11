@@ -46,7 +46,10 @@ public final class ImageViewerController: UIViewController {
     
     private lazy var dismissButton: UIButton = { [unowned self] in
         let button = UIButton()
+        let configuration = UIImage.SymbolConfiguration.init(pointSize: 20, weight: .semibold, scale: .large)
         let image = UIImage.init(systemName: "multiply")!
+            .withConfiguration(configuration)
+        button.tintColor = .darkGray
         button.setImage(image, for: .normal)
         button.addTarget(self, action: #selector(dismissAction), for: .touchUpInside)
         return button
