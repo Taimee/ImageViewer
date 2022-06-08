@@ -27,7 +27,7 @@ final class PageView: UIScrollView {
 
     private lazy var loadingIndicator: UIView = { [unowned self] in
         let indicator = UIActivityIndicatorView()
-        indicator.style = .whiteLarge
+        indicator.style = .large
         indicator.startAnimating()
         return indicator
     }()
