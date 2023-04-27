@@ -60,12 +60,15 @@ public final class ImageViewerController: UIViewController {
     private var pageViews: [PageView] = []
     public weak var delegate: ImageViewerControllerDelegate?
 
-    public init(imageURLs: [URL], pageIndex: Int = 0) {
+  public init(imageURLs: [URL], pageIndex: Int = 0, useCustomTransitioning: Bool = true) {
         self.pageIndex = pageIndex
         self.imageURLs = imageURLs
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .fullScreen
-        transitioningDelegate = self
+
+        if useCustomTransitioning {
+            transitioningDelegate = self
+        }
     }
 
     required init?(coder: NSCoder) {
