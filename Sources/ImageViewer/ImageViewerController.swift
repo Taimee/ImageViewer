@@ -44,13 +44,8 @@ public final class ImageViewerController: UIViewController {
         return pageControl
     }()
     
-    private lazy var dismissButton: UIButton = { [unowned self] in
-        let button = UIButton()
-        let configuration = UIImage.SymbolConfiguration.init(pointSize: 20, weight: .semibold, scale: .large)
-        let image = UIImage.init(systemName: "multiply")!
-            .withConfiguration(configuration)
-        button.tintColor = .darkGray
-        button.setImage(image, for: .normal)
+    private lazy var dismissButton: DismissButton = { [unowned self] in
+        let button = DismissButton()
         button.addTarget(self, action: #selector(dismissAction), for: .touchUpInside)
         return button
     }()
@@ -107,7 +102,7 @@ public final class ImageViewerController: UIViewController {
             width: 200,
             height: 30
         )
-        dismissButton.frame = .init(x: 0, y: 40, width: 50, height: 50)
+        dismissButton.frame = .init(x: 16, y: 40, width: 48, height: 36)
         
         // configuration with initial values after initialize layout
         pageControl.numberOfPages = pageViews.count
