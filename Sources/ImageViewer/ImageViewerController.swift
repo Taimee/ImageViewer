@@ -85,6 +85,16 @@ public final class ImageViewerController: UIViewController {
         }
         view.addSubview(pageControl)
         view.addSubview(dismissButton)
+
+        let gestureRecognizer = PanDirectionGestureRecognizer(
+          direction: .vertical,
+          target: self,
+          action: #selector(self.handleViewPanned)
+        )
+        
+        gestureRecognizer.cancelsTouchesInView = false
+      
+        view.addGestureRecognizer(gestureRecognizer)
     }
 
     override public func viewDidLayoutSubviews() {
@@ -130,6 +140,47 @@ public final class ImageViewerController: UIViewController {
     @objc func dismissAction() {
         dismiss(animated: true)
     }
+
+    @objc func handleViewPanned(sender: UIPanGestureRecognizer) {
+         let translation = sender.translation(in: view)
+         let progress = abs(translation.y) / view.frame.height
+
+         switch sender.state {
+         case .changed:
+             UIView.animate(
+                 withDuration: 0.0,
+                 delay: 0,
+                 usingSpringWithDamping: 0.7,
+                 initialSpringVelocity: 1,
+                 options: .curveEaseOut,
+                 animations: {
+                   self.view.transform.ty = translation.y
+                 }
+             )
+         case .cancelled:
+             break
+
+         case .ended:
+             let velocity = sender.velocity(in: view).y
+
+             if progress + abs(velocity) / view.bounds.height > 0.8 {
+                 self.dismiss(animated: true, completion: nil)
+             } else {
+                 UIView.animate(
+                     withDuration: 0.0,
+                     delay: 0,
+                     usingSpringWithDamping: 0.7,
+                     initialSpringVelocity: 1,
+                     options: .curveEaseOut,
+                     animations: {
+                         self.view.transform = .identity
+                     }
+                 )
+             }
+         default:
+             break
+         }
+     }
 }
 
 extension ImageViewerController: UIScrollViewDelegate {
