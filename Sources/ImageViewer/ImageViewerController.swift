@@ -16,6 +16,11 @@ public extension ImageViewerControllerDelegate {
     func dismiss(_ imageViewerController: ImageViewerController, lastPageIndex: Int) {}
 }
 
+public enum BackgroundStyle {
+    case blurredImage
+    case color(UIColor)
+}
+
 public final class ImageViewerController: UIViewController {
 
     lazy var scrollView: UIScrollView = { [unowned self] in
@@ -26,16 +31,18 @@ public final class ImageViewerController: UIViewController {
         scrollView.decelerationRate = .fast
         return scrollView
     }()
-    
+
+    private lazy var backgroundEffectView: UIVisualEffectView = {
+        let effect = UIBlurEffect(style: .light)
+        let effectView = UIVisualEffectView(effect: effect)
+        effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return effectView
+    }()
+
     private lazy var backgroundImageView: UIImageView = { [unowned self] in
         let imageView = UIImageView()
         imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        let effect = UIBlurEffect.init(style: .light)
-        let effectView = UIVisualEffectView.init(effect: effect)
-        effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        imageView.addSubview(effectView)
+        imageView.addSubview(self.backgroundEffectView)
         return imageView
     }()
     
@@ -54,10 +61,12 @@ public final class ImageViewerController: UIViewController {
     private let imageURLs: [URL]
     private var pageViews: [PageView] = []
     public weak var delegate: ImageViewerControllerDelegate?
+    public let backgroundStyle: BackgroundStyle
 
-  public init(imageURLs: [URL], pageIndex: Int = 0, useCustomTransitioning: Bool = true) {
+  public init(imageURLs: [URL], pageIndex: Int = 0, useCustomTransitioning: Bool = true, backgroundStyle: BackgroundStyle = .blurredImage) {
         self.pageIndex = pageIndex
         self.imageURLs = imageURLs
+        self.backgroundStyle = backgroundStyle
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .fullScreen
 
@@ -134,7 +143,16 @@ public final class ImageViewerController: UIViewController {
          PageViewでの画像読み込みは非同期で行われているため、どのくらいの速さで終わるかは不安定。
          そのため、2箇所の両方でこの処理を呼び出すことで、両方が終わったタイミングで更新されることを保証している。
          */
-        backgroundImageView.image = pageViews[pageIndex].imageView.image
+        switch backgroundStyle {
+        case .blurredImage:
+            backgroundImageView.image = pageViews[pageIndex].imageView.image
+            backgroundEffectView.isHidden = false
+            backgroundImageView.backgroundColor = nil
+        case .color(let color):
+            backgroundImageView.image = nil
+            backgroundEffectView.isHidden = true
+            backgroundImageView.backgroundColor = color
+        }
     }
     
     @objc func dismissAction() {
